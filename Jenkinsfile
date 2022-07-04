@@ -7,7 +7,8 @@ pipeline {
                         sh 'cp -R helm/* .'
 		        sh 'ls -ltr'
                         sh 'pwd'
-                        sh '/usr/local/bin/helm upgrade --install petclinic-app petclinic  --set image.repository=registry.hub.docker.com/moizmohammed2112/petclinic --set image.tag=4 --kubeconfig /root/.kube/config'
+		        sh 'sudo su - root'
+                        sh '/usr/local/bin/helm upgrade --install petclinic-app petclinic  --set image.repository=registry.hub.docker.com/moizmohammed2112/petclinic --set image.tag=4'
               			
             }           
         }
